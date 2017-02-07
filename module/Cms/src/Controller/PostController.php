@@ -17,6 +17,7 @@ class PostController extends AbstractActionController
     public function indexAction()
     {
     	return new ViewModel([
+            'mt' => 'List posts',
             'posts' => $this->table->fetchAll(),
         ]);
     }

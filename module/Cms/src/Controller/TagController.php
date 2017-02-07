@@ -17,6 +17,7 @@ class TagController extends AbstractActionController
     public function indexAction()
     {
     	return new ViewModel([
+            'mt' => 'List tags',
             'tags' => $this->table->fetchAll(),
         ]);
     }

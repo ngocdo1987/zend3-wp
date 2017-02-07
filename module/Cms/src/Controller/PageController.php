@@ -17,6 +17,7 @@ class PageController extends AbstractActionController
     public function indexAction()
     {
     	return new ViewModel([
+            'mt' => 'List pages',
             'pages' => $this->table->fetchAll(),
         ]);
     }

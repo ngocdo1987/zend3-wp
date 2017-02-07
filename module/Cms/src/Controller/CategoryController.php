@@ -17,6 +17,7 @@ class CategoryController extends AbstractActionController
     public function indexAction()
     {
     	return new ViewModel([
+            'mt' => 'List categories',
             'categories' => $this->table->fetchAll(),
         ]);
     }
