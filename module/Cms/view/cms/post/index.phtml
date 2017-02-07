@@ -1,30 +1,29 @@
 <?php
-// module/Album/view/album/album/index.phtml:
-
-$title = 'List posts';
-$this->headTitle($title);
+    $this->headTitle('List posts');
 ?>
+
 <h1><?= $this->escapeHtml($title) ?></h1>
+
 <p>
     <a href="<?= $this->url('post', ['action' => 'add']) ?>">ADD NEW</a>
 </p>
 
 <table class="table">
-<tr>
-    <th>Title</th>
-    <th>Image</th>
-    <th>Content</th>
-    <th>&nbsp;</th>
-</tr>
-<?php foreach ($posts as $post) : ?>
     <tr>
-        <td><?= $this->escapeHtml($post->post_title) ?></td>
-        <td></td>
-        <td><?= $this->escapeHtml($post->post_content) ?></td>
-        <td>
-            <a href="<?= $this->url('post', ['action' => 'edit', 'id' => $post->id]) ?>">Edit</a>
-            <a href="<?= $this->url('post', ['action' => 'delete', 'id' => $post->id]) ?>">Delete</a>
-        </td>
+        <th>Title</th>
+        <th>Image</th>
+        <th>Content</th>
+        <th>&nbsp;</th>
     </tr>
-<?php endforeach; ?>
+    <?php foreach ($posts as $post) : ?>
+        <tr>
+            <td><?= $this->escapeHtml($post->post_title) ?></td>
+            <td></td>
+            <td><?= $this->escapeHtml($post->post_content) ?></td>
+            <td>
+                <a href="<?= $this->url('post', ['action' => 'edit', 'id' => $post->id]) ?>">Edit</a> | 
+                <a href="<?= $this->url('post', ['action' => 'delete', 'id' => $post->id]) ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
 </table>
