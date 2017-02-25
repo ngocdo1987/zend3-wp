@@ -20,22 +20,31 @@ class CrudController extends AbstractActionController
 
     public function indexAction()
     {
-        return new ViewModel([
+        $viewModel = new ViewModel([
             'mt' => 'List '.$this->plural,
-            $this->plural => $this->table->fetchAll(),
-            'config' => $this->config
+            'cruds' => $this->table->fetchAll(),
+            'config' => $this->config,
+            'singular' => $this->singular,
+            'plural' => $this->plural
         ]);
+
+        $viewModel->setTemplate('cms/crud/index.phtml');
+
+        return $viewModel;
     }
 
     public function addAction()
     {
+
     }
 
     public function editAction()
     {
+
     }
 
     public function deleteAction()
     {
+        
     }
 }
