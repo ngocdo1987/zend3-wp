@@ -12,10 +12,10 @@
     <?= $this->headTitle('Zend Framework Admin')->setSeparator(' - ')->setAutoEscape(false) ?>
 
     <?= $this->headLink()
-            ->prependStylesheet($this->basePath('admin/vendor/bootstrap/css/bootstrap.min.css'))
-            ->prependStylesheet($this->basePath('admin/vendor/metisMenu/metisMenu.min.css'))
-            ->prependStylesheet($this->basePath('admin/dist/css/sb-admin-2.css'))
             ->prependStylesheet($this->basePath('admin/vendor/font-awesome/css/font-awesome.min.css'))
+            ->prependStylesheet($this->basePath('admin/dist/css/sb-admin-2.css'))
+            ->prependStylesheet($this->basePath('admin/vendor/metisMenu/metisMenu.min.css'))
+            ->prependStylesheet($this->basePath('admin/vendor/bootstrap/css/bootstrap.min.css'))
     ?>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">ZF3 Admin</a>
+                <a class="navbar-brand" href="#">Zend Framework 3 Admin</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -138,12 +138,12 @@
     <!-- /#wrapper -->
 
     <?= $this->headScript()
-            ->prependFile($this->basePath('admin/vendor/jquery/jquery.min.js'))
-            ->prependFile($this->basePath('admin/vendor/bootstrap/js/bootstrap.min.js'))
-            ->prependFile($this->basePath('admin/vendor/metisMenu/metisMenu.min.js'))
-            ->prependFile($this->basePath('admin/dist/js/sb-admin-2.js'))
-            ->prependFile($this->basePath('js/ckeditor/ckeditor.js'))
             ->prependFile($this->basePath('js/summernote/summernote.js'))
+            ->prependFile($this->basePath('js/ckeditor/ckeditor.js'))
+            ->prependFile($this->basePath('admin/dist/js/sb-admin-2.js'))
+            ->prependFile($this->basePath('admin/vendor/metisMenu/metisMenu.min.js'))
+            ->prependFile($this->basePath('admin/vendor/bootstrap/js/bootstrap.min.js'))
+            ->prependFile($this->basePath('admin/vendor/jquery/jquery.min.js'))
     ?>
 
     <?= $this->headLink()

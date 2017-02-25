@@ -2,35 +2,16 @@
 namespace Cms\Controller;
 
 use Cms\Model\TagTable;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
 
-class TagController extends AbstractActionController
+class TagController extends CrudController
 {
-    private $table;
+    protected $singular = 'tag';
+    protected $plural = 'tags';
 
     public function __construct(TagTable $table)
     {
+        parent::__construct();
+
         $this->table = $table;
-    }
-
-    public function indexAction()
-    {
-    	return new ViewModel([
-            'mt' => 'List tags',
-            'tags' => $this->table->fetchAll(),
-        ]);
-    }
-
-    public function addAction()
-    {
-    }
-
-    public function editAction()
-    {
-    }
-
-    public function deleteAction()
-    {
     }
 }

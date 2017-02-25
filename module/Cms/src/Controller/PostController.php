@@ -2,35 +2,16 @@
 namespace Cms\Controller;
 
 use Cms\Model\PostTable;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
 
-class PostController extends AbstractActionController
+class PostController extends CrudController
 {
-    private $table;
+    protected $singular = 'post';
+    protected $plural = 'posts';
 
     public function __construct(PostTable $table)
     {
+        parent::__construct();
+
         $this->table = $table;
-    }
-
-    public function indexAction()
-    {
-    	return new ViewModel([
-            'mt' => 'List posts',
-            'posts' => $this->table->fetchAll(),
-        ]);
-    }
-
-    public function addAction()
-    {
-    }
-
-    public function editAction()
-    {
-    }
-
-    public function deleteAction()
-    {
     }
 }

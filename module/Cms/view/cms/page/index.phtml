@@ -4,10 +4,17 @@
 
 <h1 class="page-header"><?= $mt ?></h1>
 
+<p>
+    <a href="<?= $this->url('page', ['action' => 'add']) ?>" class="btn btn-primary">
+        <i class="fa fa-plus"></i> ADD NEW
+    </a>
+</p>
+
 <?php if(count($pages) > 0) : ?>
     <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
         <thead>
             <tr>
+                <th><input type="checkbox" /></th>
                 <th>Title</th>
                 <th>Image</th>
                 <th>Content</th>
@@ -17,6 +24,7 @@
         <tbody>
             <?php foreach ($pages as $page) : ?>
             <tr>
+                <td><input type="checkbox" /></td>
                 <td>
                     <?= $this->escapeHtml($page->page_title) ?>
                 </td>
@@ -25,8 +33,12 @@
                     <?= $this->escapeHtml($page->page_content) ?>
                 </td>
                 <td class="center">
-                    <a href="<?= $this->url('page', ['action' => 'edit', 'id' => $page->id]) ?>" class="btn btn-primary btn-xs">Edit</a> 
-                    <a href="<?= $this->url('page', ['action' => 'delete', 'id' => $page->id]) ?>" class="btn btn-danger btn-xs">Delete</a>
+                    <a href="<?= $this->url('page', ['action' => 'edit', 'id' => $page->id]) ?>" class="btn btn-default btn-xs">
+                        <i class="fa fa-edit"></i> Edit
+                    </a> 
+                    <a href="<?= $this->url('page', ['action' => 'delete', 'id' => $page->id]) ?>" class="btn btn-default btn-xs">
+                        <i class="fa fa-trash"></i> Delete
+                    </a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -39,5 +51,3 @@
         </font>
     </center>
 <?php endif; ?>    
-
-<a href="<?= $this->url('page', ['action' => 'add']) ?>" class="btn btn-primary">ADD NEW</a>

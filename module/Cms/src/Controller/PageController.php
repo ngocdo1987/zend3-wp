@@ -2,35 +2,16 @@
 namespace Cms\Controller;
 
 use Cms\Model\PageTable;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
 
-class PageController extends AbstractActionController
+class PageController extends CrudController
 {
-    private $table;
+    protected $singular = 'page';
+    protected $plural = 'pages';
 
     public function __construct(PageTable $table)
     {
+        parent::__construct();
+        
         $this->table = $table;
-    }
-
-    public function indexAction()
-    {
-    	return new ViewModel([
-            'mt' => 'List pages',
-            'pages' => $this->table->fetchAll(),
-        ]);
-    }
-
-    public function addAction()
-    {
-    }
-
-    public function editAction()
-    {
-    }
-
-    public function deleteAction()
-    {
     }
 }
