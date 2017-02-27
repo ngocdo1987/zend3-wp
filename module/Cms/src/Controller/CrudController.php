@@ -35,12 +35,24 @@ class CrudController extends AbstractActionController
 
     public function addAction()
     {
+        $viewModel = new ViewModel([
+            'mt' => 'Add '.$this->singular
+        ]);
 
+        $viewModel->setTemplate('cms/crud/add.phtml');
+
+        return $viewModel;
     }
 
     public function editAction()
     {
+        $viewModel = new ViewModel([
+            'mt' => 'Edit '.$this->singular
+        ]);
 
+        $viewModel->setTemplate('cms/crud/edit.phtml');
+
+        return $viewModel;
     }
 
     public function deleteAction()
